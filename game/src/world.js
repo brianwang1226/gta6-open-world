@@ -147,7 +147,6 @@ export function resetWorld(state) {
   state.spawnGangCars = () => spawnGangCars(state);
   state.hurtPlayer = (amount) => hurtPlayer(state, amount);
   state.onPedShot = () => { addWanted(state, state.police, WANTED.shoot, state.time); };
-  state.onCopShot = () => { addWanted(state, state.police, WANTED.killCop, state.time); };
   state.onCarShot = (car) => {
     if (car.kind === 'police') addWanted(state, state.police, WANTED.shoot, state.time);
     if (car.kind === 'gang' && state.missions.index !== 3) addWanted(state, state.police, WANTED.shoot, state.time);
